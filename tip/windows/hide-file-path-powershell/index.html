@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide the File Path in Powershell - QuickTips.pro</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Fluff-free guide to hiding the file path in Powershell.">
+    <meta name="keywords" content="hide file path, powershell, file path">
+    <meta name="author" content="QuickTips.pro">
+    <link rel="canonical" href="https://quicktips.pro/tip/windows/hide-file-path-powershell/index.html">
+
+    <!-- Social Media Sharing Tags -->
+    <meta property="og:title" content="Hide the File Path in Powershell - QuickTips.pro">
+    <meta property="og:description" content="Fluff-free guide to hiding the file path in Powershell.">
+    <meta property="og:url" content="https://quicktips.pro/tip/windows/hide-file-path-powershell/index.html">
+    <meta property="og:type" content="article">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Link to Tailwind CSS -->
+    <link href="/styles/output.css" rel="stylesheet">
+
+    <!-- Link to external font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body class="flex flex-col min-h-screen bg-slate-800">
+
+    <nav id="navbar"></nav>
+
+    <main class="flex-grow bg-slate mt-6 mb-20 px-4 w-full mx-auto md:w-3/4 lg:w-1/2">
+
+        <h1 class="font-condensed text-3xl font-bold text-slate-300 my-6">Hide the File Path in Powershell</h1>
+
+        <article class="my-10">
+            <div class="md:mx-6">
+                <p class="my-4 text-slate-300">When you want to truncate the long file path that Powershell displays in VSCode/VSCodium.</p>
+            </div>
+        </article>
+        
+        <article class="my-10">
+            
+            <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4 mt-20">Open/Create PowerShell Profile</h2>
+            
+            <div class="md:mx-6">
+                <p class="my-4 text-slate-300"><b>[Option 1]</b> Using Windows Explorer (create the file if necessary):</p>
+<pre class="bg-slate-800 p-2 overflow-x-auto rounded border border-slate-600">
+<code class="my-4 text-slate-300">%userprofile%\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</code>
+</pre>
+            </div>
+            
+            
+            <div class="mt-4 md:mx-6">
+                <p class="my-4 text-slate-300"><b>[Option 2]</b> Using PowerShell:</p>
+<pre class="bg-blue-900 p-2 overflow-x-auto rounded border border-blue-600">
+<code class="text-sm font-mono text-slate-200">PS C:\> Notepad $profile</code>
+</pre>
+            </div>
+            
+        <article class="my-10">
+
+            <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4 mt-20">Add Function to the Profile</h2>
+            
+            <div class="md:mx-6">
+<pre class="bg-slate-800 p-2 overflow-x-auto rounded border border-slate-600">
+<code class="my-4 text-slate-300">function prompt {
+    $p = Split-Path -leaf -path (Get-Location)
+    "$p> "
+}</code>
+</pre>
+            <p class="my-4 text-slate-300">Save and restart PowerShell.</p>
+            </div>
+            
+        </article>
+
+        <article class="my-10">
+
+            <h2 class="font-condensed text-2xl font-bold text-orange-300 mb-4 mt-20">Error: Not Allowed to Run Scripts</h2>
+            
+            <div class="md:mx-6">
+<pre class="bg-blue-900 p-2 overflow-x-auto rounded border border-blue-600">
+<code class="text-sm font-mono text-slate-200">PS C:\> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code>
+</pre>
+
+            <p class="my-4 text-slate-300">Save and restart PowerShell.</p>
+            </div>
+
+        </article>
+
+    </main>
+
+    <footer id="footer"></footer>
+
+
+    <!-- Scripts -->
+    <script src="/js/search.js"></script>
+    <script src="/js/components.js"></script>
+        
+</body>
+
+</html>

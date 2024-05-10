@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick Tips - Quick Solutions for Busy Profesionals</title>
+    <title>Quick Tips - Quick Solutions for Busy Professionals</title>
     <!-- SEO Meta Tags -->
     <meta name="description" content="Get straightforward, fluff-free quick tips for busy professionals. Find the answers you need quickly and efficiently.">
     <meta name="keywords" content="quick tips, solutions, professional advice, productivity, efficiency">
@@ -26,32 +26,35 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- Link to Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/styles/output.css" rel="stylesheet">
+
+    <!-- Link to external font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen bg-slate-800">
 
-    <main class="bg-white">
-        <section class="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
-            <!-- Parent container set to flex and default column direction -->
-            <div class="flex flex-col lg:flex-row relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:gap-x-20 lg:px-24 lg:pt-0">
-                <!-- First div (will be ordered last on mobile, first on larger screens) -->
-                <article class="order-last lg:order-1 mx-auto max-w-md p-10 mb-10 text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-                    <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Coming soon...</h1>
-                    <p class="mt-6 text-lg leading-8 text-gray-300">Straightforward, fluff-free quick tips for busy professionals.</p>
-                    <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                        <a href="https://quicktips.pro/coming-soon" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm opacity-50 cursor-not-allowed">Get started</a>
-                        <a href="https://quicktips.pro/learn-more" class="text-sm font-semibold leading-6 text-white opacity-50 cursor-not-allowed">Learn more <span aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-                <!-- Second div (will be ordered first on mobile, second on larger screens) -->
-                <div class="order-1 lg:order-2 mx-auto my-auto max-w-md p-5">
-                    <img src="https://quicktips.pro/img/quicktips.pro-logo-light.webp" alt="QuickTips.pro logo" class="max-w-full">
-                </div>
-            </div>
-        </section>
+    <nav id="navbar"></nav>
+
+    <main class="flex-grow bg-slate my-6 px-4 w-full mx-auto md:w-3/4 lg:w-1/2">
+        <h1 class="text-3xl font-bold text-slate-300 my-6">Search for QuickTips</h1>
+        <!-- SITE SEARCH -->
+        <article>
+                <form id="searchForm" class="flex border-2 rounded border-slate-400 overflow-hidden">
+                    <input type="text" id="searchInput" placeholder="Search..." aria-label="Search" class="px-4 py-2 w-full">
+                </form>
+                <div id="searchResults" class="mt-4"></div>
+        </article>
     </main>
 
+    <footer id="footer"></footer>
+
+
+    <!-- Scripts -->
+    <script src="/js/search.js"></script>
+    <script src="/js/components.js"></script>
+        
 </body>
 
 </html>

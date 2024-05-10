@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix for 'Error: No module named tkinter' - QuickTips.pro</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Fluff-free guide to fixing 'No module named tkinter' in VSCodium, despite it being installed.">
+    <meta name="keywords" content="WHOIS, Ubuntu, Debian, domain lookup, network tools, command line">
+    <meta name="author" content="QuickTips.pro">
+    <link rel="canonical" href="https://quicktips.pro/tip/linux/no-module-named-tkinter">
+
+    <!-- Social Media Sharing Tags -->
+    <meta property="og:title" content="Fix for 'Error: No module named tkinter' - QuickTips.pro">
+    <meta property="og:description" content="Fluff-free guide to fixing 'No module named tkinter' in VSCodium, despite it being installed.">
+    <meta property="og:url" content="https://quicktips.pro/tip/linux/no-module-named-tkinter">
+    <meta property="og:type" content="article">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Link to Tailwind CSS -->
+    <link href="/styles/output.css" rel="stylesheet">
+
+    <!-- Link to external font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body class="flex flex-col min-h-screen bg-slate-800">
+
+    <nav id="navbar"></nav>
+
+    <main class="flex-grow bg-slate mt-6 mb-20 px-4 w-full mx-auto md:w-3/4 lg:w-1/2">
+
+        <h1 class="text-3xl font-bold text-orange-300 my-6">Error: No module named tkinter</h1>
+
+        <article class="my-10">
+            <div class="md:mx-6">
+                <p class="my-4 text-slate-300">This only appeared when VSCodium had been installed via Flatpack. Remove and install with deb/rpm repo instead (instructions at bottom).</p>
+            </div>
+        </article>
+
+        <article class="my-20">
+            <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">Test in linux terminal</h2>
+            
+            <div class="md:mx-6">
+<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">$ python3</code>
+</pre>
+<pre class="bg-slate-900 p-2 mt-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">>>> import os</code>
+</pre>
+<pre class="bg-slate-900 p-2 mt-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">>>> import sys</code>
+</pre>
+<pre class="bg-slate-900 p-2 mt-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">>>> print(os.path.realpath(sys.executable))</code>
+</pre>
+                <div class="md:mx-6">
+                    <p class="my-4 text-slate-300">Should output something like:</p>
+                </div>
+<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">/usr/bin/python3.10</code>
+</pre>
+            </div>
+
+        </article>
+
+        <article class="my-20">
+            <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">Test in VSCodium terminal</h2>
+
+                <div class="md:mx-6">
+                    <p class="my-4 text-slate-300">Do the same test as above.</p>
+                </div>
+                <div class="md:mx-6">
+                    <p class="my-4 text-slate-300">It'll probably output something like:</p>
+                </div>
+<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">/usr/bin/python3.11</code>
+</pre>
+                <div class="md:mx-6">
+                    <p class="my-4 text-slate-300">... because VSCodium is sandboxed!</p>
+                </div>
+            </div>
+
+        </article>
+
+        <article class="my-20">
+            <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">Install VSCodium via deb/rpm repo</h2>
+            
+            <div class="md:mx-6">
+                <div class="md:mx-6">
+                    <p class="my-4 text-slate-300">Add the GPG key of the repository:</p>
+                </div>
+<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">$ wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+| gpg --dearmor \
+| sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg</code>
+</pre>
+
+                <div class="md:mx-6">
+                    <p class="my-4 text-slate-300">Add the repository:</p>
+                </div>
+<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' \
+| sudo tee /etc/apt/sources.list.d/vscodium.list</code>
+</pre>
+
+                <div class="md:mx-6">
+                    <p class="my-4 text-slate-300">Update then install vscodium:</p>
+                </div>
+<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">sudo apt update && sudo apt install codium</code>
+</pre>
+
+                <div class="md:mx-6">
+                    <p class="my-4 text-slate-300">Then set the python interpreter in the Command Palette to the one identified in the linux terminal test above.</p>
+                </div>
+            </div>
+
+        </article>
+
+    </main>
+
+    <footer id="footer"></footer>
+
+
+    <!-- Scripts -->
+    <script src="/js/search.js"></script>
+    <script src="/js/components.js"></script>
+        
+</body>
+
+</html>
