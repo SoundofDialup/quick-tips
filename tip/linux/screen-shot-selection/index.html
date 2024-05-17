@@ -1,93 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Screenshot Selection with Key - QuickTips.pro</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Fluff-free guide to setting up a simple keybinding to use the screenshot selection tool in Linux.">
-    <meta name="keywords" content="screenshot, Ubuntu, Debian, gnome, keybinding">
-    <meta name="author" content="QuickTips.pro">
-    <link rel="canonical" href="https://quicktips.pro/tip/linux/screen-shot-selection">
+    <meta
+      name="description"
+      content="Fluff-free guide to setting up a simple keybinding to use the screenshot selection tool in Linux." />
+    <meta
+      name="keywords"
+      content="screenshot, Ubuntu, Debian, gnome, keybinding" />
+    <meta name="author" content="QuickTips.pro" />
+    <link
+      rel="canonical"
+      href="https://quicktips.pro/tip/linux/screen-shot-selection" />
 
     <!-- Social Media Sharing Tags -->
-    <meta property="og:title" content="Screenshot Selection with Key - QuickTips.pro">
-    <meta property="og:description" content="Fluff-free guide to setting up a simple keybinding to use the screenshot selection tool in Linux.">
-    <meta property="og:url" content="https://quicktips.pro/tip/linux/screen-shot-selection">
-    <meta property="og:type" content="article">
+    <meta
+      property="og:title"
+      content="Screenshot Selection with Key - QuickTips.pro" />
+    <meta
+      property="og:description"
+      content="Fluff-free guide to setting up a simple keybinding to use the screenshot selection tool in Linux." />
+    <meta
+      property="og:url"
+      content="https://quicktips.pro/tip/linux/screen-shot-selection" />
+    <meta property="og:type" content="article" />
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" href="/favicon.ico">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Link to Tailwind CSS -->
-    <link href="/styles/output.css" rel="stylesheet">
+    <link href="/styles/output.css" rel="stylesheet" />
 
     <!-- Link to external font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap"
+      rel="stylesheet" />
+  </head>
 
-</head>
-
-
-<body class="flex flex-col min-h-screen bg-slate-800">
-
+  <body class="flex flex-col min-h-screen bg-slate-800">
     <nav id="navbar"></nav>
 
-    <main class="flex-grow bg-slate mt-6 mb-20 px-4 w-full mx-auto md:w-3/4 lg:w-1/2">
+    <main
+      class="flex-grow bg-slate mt-6 mb-20 px-4 w-full mx-auto md:w-3/4 lg:w-1/2">
+      <h1 class="text-3xl font-bold text-slate-300 my-6">
+        Screenshot Selection in Linux Mint
+      </h1>
 
-        <h1 class="text-3xl font-bold text-slate-300 my-6">Screenshot Selection in Linux Mint</h1>
+      <article class="my-10">
+        <div class="md:mx-6">
+          <p class="my-4 text-slate-300">
+            Set a shortcut to default to the 'screenshot selection' tool (GNOME
+            Screenshot).
+          </p>
+        </div>
+      </article>
 
-        <article class="my-10">
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">Set a shortcut to default to the 'screenshot selection' tool (GNOME Screenshot).</p>
-            </div>
-        </article>
+      <article class="my-20">
+        <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">
+          Create Custom Shortcut in Linux Mint
+        </h2>
 
-        <article class="my-20">
-            <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">Create Custom Shortcut in Linux Mint</h2>
-            
-            <div class="md:mx-6">
-                <div class="md:mx-6">
-                    <p class="my-4 text-slate-300">Search for <b>keyboard</b></p>
-                </div>
+        <div class="md:mx-6">
+          <p class="my-4 text-slate-300">
+            Search for
+            <b>keyboard</b>
+          </p>
 
-                <div class="md:mx-6">
-                    <p class="my-4 text-slate-300"><b>Shortcuts</b> tab</p>
-                </div>
+          <p class="my-4 text-slate-300">
+            <b>Shortcuts</b>
+            tab
+          </p>
 
-                <div class="md:mx-6">
-                    <p class="my-4 text-slate-300"><b>Add custom shortcut</b> button</p>
-                </div>
+          <p class="my-4 text-slate-300">
+            <b>Add custom shortcut</b>
+            button
+          </p>
 
-                <div class="md:mx-6">
-                    <p class="my-4 text-slate-300">Give it a name.</p>
-                </div>
+          <p class="my-4 text-slate-300">Give it a name.</p>
 
-                <div class="md:mx-6">
-                    <p class="my-4 text-slate-300">Command: <b>gnome-screenshot -a</b></p>
-                </div>
+          <p class="my-4 text-slate-300">
+            Command:
+            <b>gnome-screenshot -a</b>
+          </p>
 
-                <div class="md:mx-6">
-                    <p class="my-4 text-slate-300">Add, then double-click on the <b>unassigned</b> and hit the desired key.</p>
-                </div>
-
-            </div>
-
-        </article>
-
+          <p class="my-4 text-slate-300">
+            Add, then double-click on the
+            <b>unassigned</b>
+            and hit the desired key.
+          </p>
+        </div>
+      </article>
     </main>
 
     <footer id="footer"></footer>
 
-
     <!-- Scripts -->
     <script src="/js/search.js"></script>
     <script src="/js/components.js"></script>
-        
-</body>
-
+  </body>
 </html>

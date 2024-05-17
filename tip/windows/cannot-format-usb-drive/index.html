@@ -1,165 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Can't Format a USB Drive - QuickTips.pro</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Fluff-free guide to fix a USB drive that can't be formatted.">
-    <meta name="keywords" content="usb, format, unknown capativy, write protected">
-    <meta name="author" content="QuickTips.pro">
-    <link rel="canonical" href="https://quicktips.pro/tip/windows/cannot-format-usb-drive/index.html">
+    <meta
+      name="description"
+      content="Fluff-free guide to fix a USB drive that can't be formatted." />
+    <meta
+      name="keywords"
+      content="usb, format, unknown capativy, write protected" />
+    <meta name="author" content="QuickTips.pro" />
+    <link
+      rel="canonical"
+      href="https://quicktips.pro/tip/windows/cannot-format-usb-drive/index.html" />
 
     <!-- Social Media Sharing Tags -->
-    <meta property="og:title" content="Can't Format a USB Drive - QuickTips.pro">
-    <meta property="og:description" content="Fluff-free guide to fix a USB drive that can't be formatted.">
-    <meta property="og:url" content="https://quicktips.pro/tip/windows/cannot-format-usb-drive/index.html">
-    <meta property="og:type" content="article">
+    <meta
+      property="og:title"
+      content="Can't Format a USB Drive - QuickTips.pro" />
+    <meta
+      property="og:description"
+      content="Fluff-free guide to fix a USB drive that can't be formatted." />
+    <meta
+      property="og:url"
+      content="https://quicktips.pro/tip/windows/cannot-format-usb-drive/index.html" />
+    <meta property="og:type" content="article" />
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" href="/favicon.ico">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Link to Tailwind CSS -->
-    <link href="/styles/output.css" rel="stylesheet">
+    <link href="/styles/output.css" rel="stylesheet" />
 
     <!-- Link to external font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap"
+      rel="stylesheet" />
+  </head>
 
-</head>
-
-
-<body class="flex flex-col min-h-screen bg-slate-800">
-
+  <body class="flex flex-col min-h-screen bg-slate-800">
     <nav id="navbar"></nav>
 
-    <main class="flex-grow bg-slate mt-6 mb-20 px-4 w-full mx-auto md:w-3/4 lg:w-1/2">
+    <main
+      class="flex-grow bg-slate mt-6 mb-20 px-4 w-full mx-auto md:w-3/4 lg:w-1/2">
+      <h1 class="font-condensed text-3xl font-bold text-slate-300 my-6">
+        Fix a USB Drive That Can't be Formatted
+      </h1>
 
-        <h1 class="font-condensed text-3xl font-bold text-slate-300 my-6">Fix a USB Drive That Can't be Formatted</h1>
+      <article class="my-10">
+        <div class="md:mx-6">
+          <p class="my-4 text-slate-300">
+            When trying to format, you get an error like "unknown capacity," or
+            the drive is "write protected".
+          </p>
+        </div>
+      </article>
 
-        <article class="my-10">
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">When trying to format, you get an error like "unknown capacity," or the drive is "write protected".</p>
-            </div>
-        </article>
+      <article class="my-10">
+        <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4 mt-20">
+          Run cmd as admin
+        </h2>
 
-        <article class="my-10">
-
-            <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4 mt-20">Run cmd as admin</h2>
-
-            <div class="mt-4 md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+        <div class="mt-4 md:mx-6">
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">C:\> diskpart</code>
 </pre>
-            </div>
 
-            <div class="mt-4 md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+          <pre
+            class="bg-slate-900 p-2 mt-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">DISKPART> list disk</code>
 </pre>
-            </div>
 
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">Note the disk number for the USB drive, e.g. 1</p>
-            </div>
-
-            <div class="mt-4 md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+          <p class="my-4 text-slate-300">
+            Note the disk number for the USB drive, e.g. 1
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">DISKPART> select disk 1</code>
 </pre>
-            </div>
 
-            <div class="md:mx-6">
-                <p class="my-4 text-orange-300 italic">If the USB drive is write protected:</p>
-            </div>
-
-            <div class="mt-4 md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+          <p class="my-4 text-orange-300 italic">
+            If the USB drive is write protected:
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-200 italic">DISKPART> attributes disk clear readonly</code>
 </pre>
-            </div>
 
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">Remove the partition:</p>
-            </div>
-
-            <div class="mt-4 md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+          <p class="my-4 text-slate-300">Remove the partition:</p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">DISKPART> clean</code>
 </pre>
-            </div>
 
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">Create a partition:</p>
-            </div>
-
-            <div class="mt-4 md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+          <p class="my-4 text-slate-300">Create a partition:</p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">DISKPART> create partition primary</code>
 </pre>
-            </div>
 
-            <div class="md:mx-6">
-                <p class="my-4 text-orange-300 italic">If the above gives an error:</p>
-            </div>
-
-            <div class="mt-4 md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+          <p class="my-4 text-orange-300 italic">
+            If the above gives an error:
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-200 italic">DISKPART> select partition 1</code>
 </pre>
-<pre class="bg-slate-900 p-2 mt-2 overflow-x-auto rounded border border-green-800">
+          <pre
+            class="bg-slate-900 p-2 mt-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-200 italic">DISKPART> active</code>
 </pre>
-            </div>
 
-            <div class="md:mx-6">
-                <p class="my-4 text-orange-300 italic">If it still doesn't work (this takes time):</p>
-            </div>
-
-            <div class="mt-4 md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+          <p class="my-4 text-orange-300 italic">
+            If it still doesn't work (this takes time):
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-200 italic">DISKPART> clean all</code>
 </pre>
-<pre class="bg-slate-900 p-2 mt-2 overflow-x-auto rounded border border-green-800">
+          <pre
+            class="bg-slate-900 p-2 mt-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-200 italic">DISKPART> create partition primary</code>
 </pre>
-            </div>
 
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">Format now (or do via Windows Explorer):</p>
-            </div>
-
-            <div class="mt-4 md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+          <p class="my-4 text-slate-300">
+            Format now (or do via Windows Explorer):
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">DISKPART> format fs=fat32</code>
 </pre>
-            </div>
 
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">Exit the DISKPART tool when finished and close the cmd window:</p>
-            </div>
-
-            <div class="mt-4 md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+          <p class="my-4 text-slate-300">
+            Exit the DISKPART tool when finished and close the cmd window:
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">DISKPART> exit</code>
 </pre>
-            </div>
-
-        </article>
-
+        </div>
+      </article>
     </main>
 
     <footer id="footer"></footer>
 
-
     <!-- Scripts -->
     <script src="/js/search.js"></script>
     <script src="/js/components.js"></script>
-        
-</body>
-
+  </body>
 </html>

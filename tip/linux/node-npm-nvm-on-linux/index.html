@@ -1,118 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Install Node.js and npm on Linux Systems - QuickTips.pro</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Fluff-free guide to installing Node.js, npm, and nvm on Ubuntu or Debian systems.">
-    <meta name="keywords" content="node, nodejs, npm, nvm, Ubuntu, Debian, command line">
-    <meta name="author" content="QuickTips.pro">
-    <link rel="canonical" href="https://quicktips.pro/tip/linux/node-npm-nvm-on-linux">
+    <meta
+      name="description"
+      content="Fluff-free guide to installing Node.js, npm, and nvm on Ubuntu or Debian systems." />
+    <meta
+      name="keywords"
+      content="node, nodejs, npm, nvm, Ubuntu, Debian, command line" />
+    <meta name="author" content="QuickTips.pro" />
+    <link
+      rel="canonical"
+      href="https://quicktips.pro/tip/linux/node-npm-nvm-on-linux" />
 
     <!-- Social Media Sharing Tags -->
-    <meta property="og:title" content="Install Node.js, npm, and nvm on Linux Systems - QuickTips.pro">
-    <meta property="og:description" content="Fluff-free guide to installing Node.js, npm, and nvm on Ubuntu or Debian systems.">
-    <meta property="og:url" content="https://quicktips.pro/tip/linux/node-npm-nvm-on-linux">
-    <meta property="og:type" content="article">
+    <meta
+      property="og:title"
+      content="Install Node.js, npm, and nvm on Linux Systems - QuickTips.pro" />
+    <meta
+      property="og:description"
+      content="Fluff-free guide to installing Node.js, npm, and nvm on Ubuntu or Debian systems." />
+    <meta
+      property="og:url"
+      content="https://quicktips.pro/tip/linux/node-npm-nvm-on-linux" />
+    <meta property="og:type" content="article" />
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" href="/favicon.ico">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Link to Tailwind CSS -->
-    <link href="/styles/output.css" rel="stylesheet">
+    <link href="/styles/output.css" rel="stylesheet" />
 
     <!-- Link to external font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap"
+      rel="stylesheet" />
+  </head>
 
-</head>
-
-
-<body class="flex flex-col min-h-screen bg-slate-800">
-
+  <body class="flex flex-col min-h-screen bg-slate-800">
     <nav id="navbar"></nav>
 
-    <main class="flex-grow bg-slate mt-6 mb-20 px-4 w-full mx-auto md:w-3/4 lg:w-1/2">
+    <main
+      class="flex-grow bg-slate mt-6 mb-20 px-4 w-full mx-auto md:w-3/4 lg:w-1/2">
+      <h1 class="text-3xl font-bold text-slate-300 my-6">
+        Install Node.js, npm, and nvm on Linux
+      </h1>
 
-        <h1 class="text-3xl font-bold text-slate-300 my-6">Install Node.js, npm, and nvm on Linux</h1>
+      <article class="my-10">
+        <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">
+          Install Node.js
+        </h2>
 
-        <article class="my-10">
-            <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">Install Node.js</h2>
-            
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">Use the Package Manager to install Node.js (see nvm below for version control):</p>
-            </div>
-            <div class="md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+        <div class="md:mx-6">
+          <p class="my-4 text-slate-300">
+            Use the Package Manager to install Node.js (see nvm below for
+            version control):
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">$ sudo apt install nodejs</code>
 </pre>
-            </div>
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">Confirm installation:</p>
-            </div>
-            <div class="mt-4 md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+
+          <p class="my-4 text-slate-300">Confirm installation:</p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">$ node -v</code>
 </pre>
-            </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="my-20">
-            <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">Install npm</h2>
-            
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">Use the Package Manager to install npm:</p>
-            </div>
-            <div class="md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+      <article class="my-20">
+        <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">
+          Install npm
+        </h2>
+
+        <div class="md:mx-6">
+          <p class="my-4 text-slate-300">
+            Use the Package Manager to install npm:
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">$ sudo apt install npm</code>
 </pre>
-            </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="my-20">
-            <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">Install nvm</h2>
-            
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">Manually run the <a href="https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script" class="text-orange-400">install script</a> to install nvm, which allows you to install different versions of node via the command line:</p>
-            </div>
-            <div class="md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+      <article class="my-20">
+        <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">
+          Install nvm
+        </h2>
+
+        <div class="md:mx-6">
+          <p class="my-4 text-slate-300">
+            Manually run the
+            <a
+              href="https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script"
+              class="text-orange-400">
+              install script
+            </a>
+            to install nvm, which allows you to install different versions of
+            node via the command line:
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash</code>
 </pre>
-            </div>
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">Install node v 20 (restart IDE afterwards):</p>
-            </div>
-            <div class="md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+
+          <p class="my-4 text-slate-300">
+            Install node v 20 (restart IDE afterwards):
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">$ nvm install 20</code>
 </pre>
-            </div>
-            <div class="md:mx-6">
-                <p class="my-4 text-slate-300">Optional: Use a specific version of node:</p>
-            </div>
-            <div class="md:mx-6">
-<pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+
+          <p class="my-4 text-slate-300">
+            Optional: Use a specific version of node:
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
 <code class="text-sm font-mono text-green-500">$ nvm use 18</code>
 </pre>
-            </div>
-        </article>
-
+        </div>
+      </article>
     </main>
 
     <footer id="footer"></footer>
 
-
     <!-- Scripts -->
     <script src="/js/search.js"></script>
     <script src="/js/components.js"></script>
-        
-</body>
-
+  </body>
 </html>

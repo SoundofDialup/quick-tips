@@ -1,3 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    window.location.href = '/';
+document.addEventListener('DOMContentLoaded', function () {
+  window.location.href = '/';
 });
