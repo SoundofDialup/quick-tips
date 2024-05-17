@@ -33,6 +33,13 @@ const pages = [
     description:
       'How to connect to a home server running Fedora Server, so you can upload/download files.',
   },
+  {
+    title: 'Get IP Address on Linux',
+    url: '/tip/linux/get-ip-address-linux/',
+    keywords: ['linux', 'ip address', 'ip', 'ipaddress', 'ipconfig', 'ifconfig', 'hostname'],
+    description:
+      'How to get the IP address of a Linux machine.',
+  },
 
   {
     title: 'Install Tailwind CSS',
