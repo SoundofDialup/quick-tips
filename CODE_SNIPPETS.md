@@ -6,7 +6,15 @@
 <a href="URL_HERE" alt="ALT_HERE" class="text-orange-400">LINK_HERE</a>
 ```
 
-## <Article> with CLI
+## <article> x2
+
+```html
+<article class="my-10"> STUFF_HERE </article>
+
+<article class="my-20"> STUFF_HERE </article>
+```
+
+## <article> with CLI
 
 ```html
 <article class="my-10">
@@ -64,24 +72,24 @@
 </h2>
 ```
 
-## ERROR terminal instruction
+## OPTIONAL terminal instruction
 
 ```html
 <p class="my-4 text-orange-300 italic"> ERROR_HERE </p>
 <pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
-<code class="text-sm font-mono text-green-200 italic">COMMAND_HERE</code>
+<code class="text-sm font-mono text-green-200 italic">$ COMMAND_HERE</code>
 </pre>
 ```
 
-## ERROR x2 terminal instructions
+## OPTIONAL x2 terminal instructions
 
 ```html
 <p class="my-4 text-orange-300 italic">ERROR_HERE</p>
 <pre class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
-<code class="text-sm font-mono text-green-200 italic">COMMAND_1_HERE</code>
+<code class="text-sm font-mono text-green-200 italic">$ COMMAND_1_HERE</code>
 </pre>
 <pre
   class="bg-slate-900 p-2 mt-2 overflow-x-auto rounded border border-green-800">
-<code class="text-sm font-mono text-green-200 italic">COMMAND_2_HERE</code>
+<code class="text-sm font-mono text-green-200 italic">$ COMMAND_2_HERE</code>
 </pre>
 ```

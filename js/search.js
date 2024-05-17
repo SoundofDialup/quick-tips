@@ -26,13 +26,13 @@ const pages = [
     description:
       'Use a custom keybinding to use the screenshot selection tool automatically.',
   },
-//   {
-//     title: 'Connect to Home Server Running Fedora Server',
-//     url: '/tip/linux/connect-to-fedora-server-home-server/',
-//     keywords: ['linux', 'fedora', 'server', 'workstation', 'home', 'ssh'],
-//     description:
-//       'How to connect to a home server running Fedora Server, so you can upload/download files.',
-//   },
+  {
+    title: 'Connect to Home Server Running Fedora Server',
+    url: '/tip/linux/connect-to-home-server-running-fedora-server/',
+    keywords: ['linux', 'fedora', 'server', 'workstation', 'home', 'ssh'],
+    description:
+      'How to connect to a home server running Fedora Server, so you can upload/download files.',
+  },
 
   {
     title: 'Install Tailwind CSS',

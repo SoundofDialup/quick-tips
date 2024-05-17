@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect to Home Server Running Fedora Server - QuickTips.pro</title>
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Fluff-free guide to connecting to a home server running Fedora Server, so you can upload or download files." />
+    <meta
+      name="keywords"
+      content="fedora, server, home server, ssh, openssh, command line" />
+    <meta name="author" content="QuickTips.pro" />
+    <link
+      rel="canonical"
+      href="https://quicktips.pro/tip/linux/connect-to-fedora-server-home-server" />
+
+    <!-- Social Media Sharing Tags -->
+    <meta
+      property="og:title"
+      content="Connect to Home Server Running Fedora Server - QuickTips.pro" />
+    <meta
+      property="og:description"
+      content="Fluff-free guide to connecting to a home server running Fedora Server, so you can upload or download files." />
+    <meta
+      property="og:url"
+      content="https://quicktips.pro/tip/linux/connect-to-fedora-server-home-server" />
+    <meta property="og:type" content="article" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Link to Tailwind CSS -->
+    <link href="/styles/output.css" rel="stylesheet" />
+
+    <!-- Link to external font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap"
+      rel="stylesheet" />
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-slate-800">
+    <nav id="navbar"></nav>
+
+    <main
+      class="flex-grow bg-slate mt-6 mb-20 px-4 w-full mx-auto md:w-3/4 lg:w-1/2">
+      <h1 class="text-3xl font-bold text-slate-300 my-6">
+        Connect to Home Server Running Fedora Server
+      </h1>
+
+      <article class="my-10">
+        <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">
+          On the home server
+        </h2>
+
+        <div class="md:mx-6">
+          <p class="my-4 text-slate-300">
+            (Ensure that
+            <a
+              href="https://fedoraproject.org/server/download"
+              alt="Download Fedora Server"
+              class="text-orange-400"
+              >Fedora Server</a
+            >
+            has been installed, obviously.)
+          </p>
+          <p class="my-4 text-slate-300">Check if SSH is installed:</p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">$ sudo dnf list installed | grep openssh-server</code>
+</pre>
+
+          <p class="my-4 text-orange-300 italic"> If not: </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-200 italic">$ sudo dnf install openssh-server</code>
+</pre>
+
+          <p class="my-4 text-slate-300">Start the SSH service:</p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">$ sudo systemctl start sshd</code>
+</pre>
+
+          <p class="my-4 text-slate-300"
+            >Set things to auto-start SSH when server boots:</p
+          >
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">$ sudo systemctl enable sshd</code>
+</pre>
+
+          <p class="my-4 text-orange-300 italic"
+            >Change port from default 22 (unless running with
+            <a
+              href="https://selinuxproject.org/page/Main_Page"
+              alt="SELinux"
+              class="text-orange-400"
+              >SELinux</a
+            >):
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-200 italic">$ sudo nano /etc/ssh/sshd_config</code>
+</pre>
+          <p class="my-4 text-orange-300 italic"
+            >Uncomment <b># Port 22</b> and change to whatever.</p
+          >
+
+          <p class="my-4 text-orange-300 italic"
+            >Save config and restart service:
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-200 italic">$ sudo systemctl restart sshd</code>
+</pre>
+        </div>
+      </article>
+
+      <article class="my-20">
+        <h2 class="font-condensed text-2xl font-bold text-slate-300 mb-4">
+          On the workstation
+        </h2>
+
+        <div class="md:mx-6">
+          <p class="my-4 text-slate-300">Access the server through terminal:</p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-500">$ ssh [username]@[server IP address]</code>
+</pre>
+
+          <p class="my-4 text-orange-300 italic"
+            >To connect to a non-default port:
+          </p>
+          <pre
+            class="bg-slate-900 p-2 overflow-x-auto rounded border border-green-800">
+<code class="text-sm font-mono text-green-200 italic">$ ssh [username]@[server ip address] -p [port]</code>
+</pre>
+        </div>
+      </article>
+
+      <article class="my-20">
+        <h2
+          class="font-condensed text-2xl font-bold text-orange-300 mb-4 mt-20">
+          ERROR: Cannot connect when using 127.0.0.x
+        </h2>
+
+        <div class="md:mx-6">
+          <p class="my-4 text-slate-300"
+            >Try using <b>192.168.x.x</b> instead.</p
+          >
+        </div>
+      </article>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <!-- Scripts -->
+    <script src="/js/search.js"></script>
+    <script src="/js/components.js"></script>
+  </body>
+</html>
