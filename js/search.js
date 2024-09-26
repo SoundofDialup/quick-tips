@@ -1,5 +1,20 @@
 const pages = [
   {
+    title: 'Fix bluetooth connect/disconnect spam in Arch linux',
+    url: '/tip/linux/bluetooth-connect-disconnect-spam/',
+    keywords: [
+      'bluetooth',
+      'connect',
+      'connection',
+      'disconnect',
+      'disconnection',
+      'spam',
+      'linux',
+      'arch',
+    ],
+    description: 'Fix bluetooth connect/disconnect spam in Arch linux.',
+  },
+  {
     title: 'WHOIS on linux',
     url: '/tip/linux/whois-on-linux/',
     keywords: ['linux', 'whois', 'install'],
@@ -36,9 +51,16 @@ const pages = [
   {
     title: 'Get IP Address on Linux',
     url: '/tip/linux/get-ip-address-linux/',
-    keywords: ['linux', 'ip address', 'ip', 'ipaddress', 'ipconfig', 'ifconfig', 'hostname'],
-    description:
-      'How to get the IP address of a Linux machine.',
+    keywords: [
+      'linux',
+      'ip address',
+      'ip',
+      'ipaddress',
+      'ipconfig',
+      'ifconfig',
+      'hostname',
+    ],
+    description: 'How to get the IP address of a Linux machine.',
   },
 
   {
@@ -135,65 +157,64 @@ const pages = [
 let searchQuery = '';
 
 function searchPages(query) {
-    return pages.filter(
-      (page) =>
-        page.title.toLowerCase().includes(query.toLowerCase()) ||
-        page.keywords.some((keyword) =>
-          keyword.toLowerCase().includes(query.toLowerCase()),
-        ),
-    );
-  }
-  
-  document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('searchInput');
-    // Clear the search input on page load and focus on it
-    searchInput.value = '';
-    searchInput.focus();
-  
-    searchInput.addEventListener('input', function (e) {
-      searchQuery = e.target.value.toLowerCase();
-      let filteredPages = [];
-      if (searchQuery.length >= 2) {
-        filteredPages = searchPages(searchQuery).slice(0, 10); // Limit results to 10
-      }
-      displayResults(filteredPages);
-    });
-  
-    searchInput.addEventListener('focus', function () {
-      this.value = '';
-      searchQuery = '';
-      displayResults([]);
-    });
-  
-    // Hitting the ENTER key takes the user to the first result
-    searchInput.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') {
-        const filteredPages = searchPages(searchQuery);
-        if (filteredPages.length > 0) {
-          window.location.href = filteredPages[0].url;
-        }
-        e.preventDefault(); // Prevent the default action to stop the form from submitting
-      }
-    });
-  });
-  
-  function displayResults(results) {
-    const resultsContainer = document.getElementById('searchResults');
-    resultsContainer.innerHTML = '';
-  
-    if (results.length > 0) {
-      results.forEach((page) => {
-        const resultElement = document.createElement('div');
-        resultElement.innerHTML = `<h3><a href="${page.url}" class="text-orange-400">${page.title}</a></h3><p class="mb-4 text-slate-300">${page.description}</p>`;
-        resultsContainer.appendChild(resultElement);
-      });
-    } else if (searchQuery.length >= 2) {
-      // Show "No results found" if there is a search query with at least 2 characters
-      resultsContainer.innerHTML =
-        '<p class="text-slate-300">No results found.</p>';
-    } else if (searchQuery.length > 0) {
-      // Show "Keep typing..." if the user has started typing but has less than 2 characters
-      resultsContainer.innerHTML =
-        '<p class="text-slate-300">Keep typing...</p>';
+  return pages.filter(
+    (page) =>
+      page.title.toLowerCase().includes(query.toLowerCase()) ||
+      page.keywords.some((keyword) =>
+        keyword.toLowerCase().includes(query.toLowerCase()),
+      ),
+  );
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('searchInput');
+  // Clear the search input on page load and focus on it
+  searchInput.value = '';
+  searchInput.focus();
+
+  searchInput.addEventListener('input', function (e) {
+    searchQuery = e.target.value.toLowerCase();
+    let filteredPages = [];
+    if (searchQuery.length >= 2) {
+      filteredPages = searchPages(searchQuery).slice(0, 10); // Limit results to 10
     }
+    displayResults(filteredPages);
+  });
+
+  searchInput.addEventListener('focus', function () {
+    this.value = '';
+    searchQuery = '';
+    displayResults([]);
+  });
+
+  // Hitting the ENTER key takes the user to the first result
+  searchInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      const filteredPages = searchPages(searchQuery);
+      if (filteredPages.length > 0) {
+        window.location.href = filteredPages[0].url;
+      }
+      e.preventDefault(); // Prevent the default action to stop the form from submitting
+    }
+  });
+});
+
+function displayResults(results) {
+  const resultsContainer = document.getElementById('searchResults');
+  resultsContainer.innerHTML = '';
+
+  if (results.length > 0) {
+    results.forEach((page) => {
+      const resultElement = document.createElement('div');
+      resultElement.innerHTML = `<h3><a href="${page.url}" class="text-orange-400">${page.title}</a></h3><p class="mb-4 text-slate-300">${page.description}</p>`;
+      resultsContainer.appendChild(resultElement);
+    });
+  } else if (searchQuery.length >= 2) {
+    // Show "No results found" if there is a search query with at least 2 characters
+    resultsContainer.innerHTML =
+      '<p class="text-slate-300">No results found.</p>';
+  } else if (searchQuery.length > 0) {
+    // Show "Keep typing..." if the user has started typing but has less than 2 characters
+    resultsContainer.innerHTML = '<p class="text-slate-300">Keep typing...</p>';
   }
+}
